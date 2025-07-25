@@ -24,7 +24,7 @@ async function getVideos(query, isNewSearch = true) {
     try {
         const data = await window.electronAPI.youtubeSearch(query, nextPageToken);
         if (isNewSearch) videoList.innerHTML = "";
-
+         
         if (!data || !data.items || data.items.length === 0) {
             if (isNewSearch) videoList.innerHTML = "No results.";
             return;

@@ -9,26 +9,17 @@
         .video-list { margin-top: 2em; }
         .video-item { margin-bottom: 1.5em; }
     </style>
+    <link rel="stylesheet" href="../src/css/renderer.css">
 </head>
 <body>
-    <input type="text" id="search" placeholder="Search YouTube..." />
-    <button id="searchBtn">Search</button>
-    <div class="video-list" id="videoList"></div>
+   <header>
+  <h1>Multi task your video </h1>
+</header>
+<div id="searchBar">
+  <input id="search" type="text" placeholder="Search YouTube...">
+  <button id="searchBtn">Search</button>
+</div>
+<div id="videoList"></div>
     <script src="../src/renderer.js"></script>
-    <script>
-        let isLoading = false;
-
-            window.addEventListener('scroll', () => {
-                // Check if we're near the bottom (e.g., within 200px)
-                if (
-                    window.innerHeight + window.scrollY >= document.body.offsetHeight - 200 &&
-                    !isLoading &&
-                    nextPageToken // Only if there's more to load
-                ) {
-                    isLoading = true;
-                    getVideos(lastQuery, false);
-                }
-            });
-    </script>
 </body>
 </html>

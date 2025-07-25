@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>BrainRot App</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 2em; }
+        input, button { font-size: 1em; }
+        .video-list { margin-top: 2em; }
+        .video-item { margin-bottom: 1.5em; }
+    </style>
+</head>
+<body>
+    <input type="text" id="search" placeholder="Search YouTube..." />
+    <button id="searchBtn">Search</button>
+    <div class="video-list" id="videoList"></div>
+    <script src="../src/renderer.js"></script>
+    <script>
+        let isLoading = false;
+
+            window.addEventListener('scroll', () => {
+                // Check if we're near the bottom (e.g., within 200px)
+                if (
+                    window.innerHeight + window.scrollY >= document.body.offsetHeight - 200 &&
+                    !isLoading &&
+                    nextPageToken // Only if there's more to load
+                ) {
+                    isLoading = true;
+                    getVideos(lastQuery, false);
+                }
+            });
+    </script>
+</body>
+</html>

@@ -1,0 +1,13 @@
+{
+  "name": "multitaskingapp",
+  "version": "1.0.0",
+  "description": "to multi task a video using picture-in-picture",
+  "main": "src/main.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "dependencies": {
+    "electron": "^28.0.0",
+    "node-fetch": "^2.7.0"
+  }
+}

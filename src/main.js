@@ -2,7 +2,7 @@ const { app, BrowserWindow, ipcMain } = require('electron');
 const path = require('path');
 const fetch = require('node-fetch'); // If using Node 18+, you can use global fetch
 
-
+const apiKey = "";//use your google apikey
 function createWindow() {
   const win = new BrowserWindow({
     width: 800,
@@ -32,7 +32,7 @@ ipcMain.handle('youtube-search', async (event, query, pageToken = null) => {
     });
     if (pageToken) params.append('pageToken', pageToken);
 
-    const url = `https://www.googleapis.com/youtube/v3/search?${params.toString()}`;
+    const url = ``;//use your url
     const res = await fetch(url);
     const data = await res.json();
 

@@ -2,7 +2,6 @@ const { app, BrowserWindow, ipcMain } = require('electron');
 const path = require('path');
 const fetch = require('node-fetch'); // If using Node 18+, you can use global fetch
 
-const apiKey = ""; // Replace with your actual key
 
 function createWindow() {
   const win = new BrowserWindow({
